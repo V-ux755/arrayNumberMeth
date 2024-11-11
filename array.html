@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array and Number Methods</title>
+</head>
+<body>
+    <h1>Array and Number Methods</h1>
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li class="arr1"></li>
+        <li class="arr2"></li>
+        <li class="arr3"></li>
+        <li class="arr4"></li>
+        <li class="arr5"></li>
+        <li class="arr6"></li>
+        <li id="arrNum1"></li>
+        <li id="arrNum2"></li>
+        <li id="arrNum3"></li>
+        <li id="arrNum4"></li>
+        <li id="arrNum5"></li>
+        <li id="arrNum6"></li>
+    </ol>
+    
+</body>
+<script>
+    const numbers = [12, 5, 8, 130, 44, 2, 17, 9, 33, 105, 68, 72, 19];
+    const lists = document.querySelectorAll('ol li');
+
+    // Numbers that are greater than 20
+    const numberGreaterThan20 = numbers.filter(num => num > 20)
+    lists[0].textContent = `Numbers greater than 20: ${numberGreaterThan20}`; 
+
+    // Numbers Multiplied by 2
+    const numbersMultipliedBy2 = numbers.map(num => num * 2);
+    lists[1].textContent = `Numbers multiplied by 2: ${numbersMultipliedBy2}`;
+
+    // Sum of all the numbers in the array
+    let sum = 0;
+    const sumOfNumbers = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    lists[2].textContent = `Total sum: ${sumOfNumbers}`
+
+    // Numbers in descending order
+    const numbersInDescendingOrder = numbers.sort((a, b) => b - a)
+    lists[3].textContent = `Number in descending order: ${numbersInDescendingOrder}`
+
+    // First number in the array greater than 50
+    const firstNumberGreaterThan50 = numbers.find(num => num > 50);
+    lists[4].textContent = `First number greater than 50: ${firstNumberGreaterThan50}`
+
+    // Check if 33 exists in the array
+    const hasNumber33 = numbers.includes(33);
+    lists[5].textContent = `Does 33 exists in the array?: ${hasNumber33}`
+
+    // Sub-array containing the first 5 elements
+    const firstFiveElements = numbers.slice(0, 5);
+    document.getElementsByClassName('arr1')[0].textContent = `First five elements: ${firstFiveElements}`
+
+    // Second and third elements replaced with 15 and 25
+    const SecondAndThirdElementsReplaced = numbers.splice(1, 2, 15, 25) && numbers;
+    document.getElementsByClassName('arr2')[0].textContent = `Second and third elements replaced: ${SecondAndThirdElementsReplaced}`
+
+    // Reversing the array
+    const reversedArray = numbers.reverse()
+    document.
+    getElementsByClassName('arr3')[0].textContent = `Reversed array: ${reversedArray}`
+
+    // Check if every number in the array is less than 200
+    const EveryNumberLessThan200 = numbers.every(num => num < 200)
+    document.getElementsByClassName('arr4')[0].textContent = `Is any number less than 200: ${EveryNumberLessThan200}`
+
+    // Increasing every element by 1
+    const increaseElementsByOne = numbers.map(num => num +=1)
+
+    document.getElementsByClassName('arr5')[0].textContent = `Elements increased by 1 each: ${increaseElementsByOne}`
+    
+    // Returned First 6 numbers reminders when divided by 7
+    const returnedFirstSixthNumbersDividesBySeven = numbers.slice(7).map(num => num % 7)
+    document.getElementsByClassName('arr6')[0].textContent = `Returned reminders: ${returnedFirstSixthNumbersDividesBySeven}`
+    console.log(returnedFirstSixthNumbersDividesBySeven)
+
+
+    
+
+</script>
+</html>
