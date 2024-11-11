@@ -83,7 +83,23 @@
     // Returned First 6 numbers reminders when divided by 7
     const returnedFirstSixthNumbersDividesBySeven = numbers.slice(7).map(num => num % 7)
     document.getElementsByClassName('arr6')[0].textContent = `Returned reminders: ${returnedFirstSixthNumbersDividesBySeven}`
-    console.log(returnedFirstSixthNumbersDividesBySeven)
+    
+
+    // Last five numbers with text
+    const lastFiveNumbersWithText = numbers.slice(-5).map(num => `last ${num}`);
+    document.getElementById('arrNum1').textContent = `Last five numbers with text: ${lastFiveNumbersWithText.join(',')}`
+
+    // First number that is a multiple of 2, 3 and 5
+    const firstNumberMultipleOfTwoThreeFive = numbers.find(num => num % 2 && num % 3 && num % 5);
+    document.getElementById('arrNum2').textContent = `First number that is a multiple of 2, 3 and 5: ${firstNumberMultipleOfTwoThreeFive}`
+
+    // Two separate array: even and old numbers
+    const evenNumbers = numbers.filter(num => num % 2 === 0);
+
+    const oddNumbers = numbers.filter(num => num % 2 !== 0);
+
+    document.getElementById('arrNum3').textContent = 
+    `Even numbers: ${evenNumbers.join(', ')} | Odd numbers: ${oddNumbers.join(', ')}`;
 
 
     
